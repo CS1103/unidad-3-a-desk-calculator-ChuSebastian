@@ -28,12 +28,12 @@ double prim(bool get){
             return -prim(true);
         case Kind::lp:
         { auto e = expr(true);
-            if (ts.current().kind != Kind::rp) return error("')' expected");
+            if (ts.current().kind != Kind::rp) return error("')' or lp expected");
             ts.get();
             return e;
         }
         default:
-            return error("primar y expected");
+            return error("primary expected");
     }
 }
 
